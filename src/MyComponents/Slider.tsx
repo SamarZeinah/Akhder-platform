@@ -83,9 +83,6 @@ const navigate = useNavigate();
         slidesPerView={1.2}
         speed={800}
         breakpoints={{
-          // 640: { slidesPerView: 1.5 },
-          // 768: { slidesPerView: 2.2 },
-          // 1024: { slidesPerView: 3 },
             640: { slidesPerView: 1 },
           768: { slidesPerView: 2 },
           1024: { slidesPerView: 3 },
@@ -95,17 +92,20 @@ const navigate = useNavigate();
         {cards.map((card, index) => (
           <SwiperSlide key={card.id}>
             <div
-             onClick={() => navigate(`/service/${card.id}`)}
+              onClick={() => navigate(`/service/${card.id}`)}
               className={`p-5 h-[340px] rounded-lg overflow-visible shadow-lg text-center max-w-[300px] mx-auto
                 transform transition-transform duration-300 hover:scale-[1.02] hover:shadow-xl
                 ${index % 2 === 0 ? "bg-white text-black" : "bg-[#006F3C] text-white"}`}
             >
+      
+            
               <img
                 src={card.img}
                 alt={card.title}
-                className="w-[100px] h-[100px] object-cover mx-auto mt-5"
+                className="w-[100px] h-[100px] object-cover mx-auto mt-5 animate-float"
               />
-              <div className="px-4 pt-[70px]">
+
+              <div className="px-4 pt-[70px] mb-10">
                 <h3 className="text-lg font-bold leading-normal mb-2">
                   {card.title}
                 </h3>

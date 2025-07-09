@@ -1,13 +1,3 @@
-
-// /** @type {import('tailwindcss').Config} */
-// export default {
-//   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-//   theme: {
-//     extend: {},
-//   },
-//   plugins: [],
-// }
-
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
@@ -15,14 +5,26 @@ export default {
     extend: {
       keyframes: {
         'fade-in-up': {
-          '0%': { opacity: '0', transform: 'translateY(40px)' },
+          '0%': { opacity: '0', transform: 'translateY(-200px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
+          
         },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        'pulse-scale': {
+      '0%, 100%': { transform: 'scale(1)' },
+      '50%': { transform: 'scale(1.1)' },
+    },
       },
       animation: {
         'fade-in-up': 'fade-in-up 1s ease-out forwards',
+        float: 'float 2s ease-in-out infinite',
+            'pulse-scale': 'pulse-scale 2s ease-in-out infinite',
+        
       },
     },
   },
   plugins: [],
-}
+};

@@ -1,60 +1,65 @@
 import { useForm } from "react-hook-form";
 import { Mail as EmailIcon, Phone } from "lucide-react";
-import emailjs from 'emailjs-com';
-import address from '../assets/address.png'
-import email from '../assets/email.png'
-import phone from '../assets/phone.png'
+import emailjs from "emailjs-com";
+import address from "../assets/address.png";
+import email from "../assets/email.png";
+import phone from "../assets/phone.png";
 import Insta from "../assets/Insta.png";
 import Snap from "../assets/snap.png";
 import Tiktok from "../assets/Tiktok.png";
 import Icon4 from "../assets/icon4.png";
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import facebook from "../assets/facebook.png";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-interface FormData  {
+interface FormData {
   firstName: string;
   lastName: string;
   email: string;
   phone: string;
-  Subject:string;
-  message:string;
-};
+  Subject: string;
+  message: string;
+}
 
 const ContactUs = () => {
-  const { register, handleSubmit ,formState:{errors,isSubmitting},} = useForm<FormData>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm<FormData>();
 
-  
-const onSubmit = async (data: FormData) => {
-  try {
-    const templateParams = {
-      from_firstname: data.firstName,
-      from_lastname: data.lastName,
-      from_email: data.email,
-      from_phone: data.phone,
-      subject: data.Subject,
-      message: data.message,
-    };
+  const onSubmit = async (data: FormData) => {
+    try {
+      const templateParams = {
+        from_firstname: data.firstName,
+        from_lastname: data.lastName,
+        from_email: data.email,
+        from_phone: data.phone,
+        subject: data.Subject,
+        message: data.message,
+      };
 
-    const response = await emailjs.send(
-      "service_uwtje8a",     // Service ID
-      "template_dq1ou17",    // Template ID 
+      const response = await emailjs.send(
+        "service_uwtje8a", // Service ID
+        "template_dq1ou17", // Template ID
 
-      templateParams,
-      "or_uZD7JZ7H3p-1OY"     //Public Key 
-    );
+        templateParams,
+        "or_uZD7JZ7H3p-1OY" //Public Key
+      );
 
-    console.log("Email sent successfully:", response.status);
-    toast.success("Your message has been sent!");
-
-  } catch (error) {
-    console.error("Failed to send email:", error);
-    toast.error("Oops! Something went wrong.");
-
-  }
-};
+      console.log("Email sent successfully:", response.status);
+      toast.success("Your message has been sent!");
+    } catch (error) {
+      console.error("Failed to send email:", error);
+      toast.error("Oops! Something went wrong.");
+    }
+  };
 
   return (
-        <div id="Contact" className="flex flex-col md:flex-row items-stretch justify-between  my-16">
+    <div
+      id="Contact"
+      className="flex flex-col md:flex-row items-stretch justify-between  my-16"
+    >
       {/* form */}
       <form onSubmit={handleSubmit(onSubmit)} className="p-6 text-start flex-1">
         <div className="flex gap-2">
@@ -63,23 +68,26 @@ const onSubmit = async (data: FormData) => {
             <label className="block mb-1 text-black">First Name</label>
             <input
               type="text"
-              {...register("firstName",{required:'firstName is required'})}
+              {...register("firstName", { required: "firstName is required" })}
               placeholder="First name"
               className=" text-black w-full px-3 py-2 border border-[#F1F1F1] bg-[#F1F1F1] rounded-[16px] focus:outline-none focus:ring-2 focus:ring-[#FFC107]"
             />
-            {errors.firstName && <span className="text-red-500">{errors.firstName.message}</span>}
+            {errors.firstName && (
+              <span className="text-red-500">{errors.firstName.message}</span>
+            )}
           </div>
           {/* last name */}
           <div className="mb-4 w-1/2">
             <label className="block mb-1 text-black">Last name</label>
             <input
               type="text"
-              {...register("lastName",{required:'lastName is required'})}
+              {...register("lastName", { required: "lastName is required" })}
               placeholder="Last name"
               className="text-black w-full px-3 py-2 border border-[#F1F1F1] bg-[#F1F1F1] rounded-[16px] focus:outline-none focus:ring-2 focus:ring-[#FFC107]"
             />
-            {errors.lastName && <span className="text-red-500">{errors.lastName.message}</span>}
-
+            {errors.lastName && (
+              <span className="text-red-500">{errors.lastName.message}</span>
+            )}
           </div>
         </div>
 
@@ -97,18 +105,20 @@ const onSubmit = async (data: FormData) => {
               </span>
               <input
                 type="email"
-                 {...register("email", {
+                {...register("email", {
                   required: "Email is required",
                   pattern: {
                     value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
                     message: "Invalid email format",
                   },
-                })}                placeholder="Enter your email"
+                })}
+                placeholder="Enter your email"
                 className="text-black w-full pl-10 pr-3 py-2 border border-[#F1F1F1] bg-[#F1F1F1] rounded-[16px] focus:outline-none focus:ring-2 focus:ring-[#FFC107]"
               />
-                </div>
-            {errors.email && <span className="text-red-500">{errors.email.message}</span>}
-
+            </div>
+            {errors.email && (
+              <span className="text-red-500">{errors.email.message}</span>
+            )}
           </div>
           {/* phone */}
           <div className="mb-4 w-1/2">
@@ -126,124 +136,136 @@ const onSubmit = async (data: FormData) => {
                     value: /^[0-9]{6,15}$/,
                     message: "Invalid phone number",
                   },
-                })}                placeholder="Enter your Phone"
+                })}
+                placeholder="Enter your Phone"
                 className=" text-black w-full pl-10 pr-3 py-2 border border-[#F1F1F1] bg-[#F1F1F1] rounded-[16px] focus:outline-none focus:ring-2 focus:ring-[#FFC107]"
               />
-                </div>
-            {errors.phone && <span className="text-red-500">{errors.phone.message}</span>}
-
-          
+            </div>
+            {errors.phone && (
+              <span className="text-red-500">{errors.phone.message}</span>
+            )}
           </div>
         </div>
-           {/* subject */}
-          <div className="mb-4 ">
-            <label className="block mb-1 text-black">Subject</label>
-            <input
-              type="text"
-              {...register("Subject",{required:'Subject is required'})}
-              placeholder="Enter your subject"
-              className="text-black w-full px-3 py-2 border border-[#F1F1F1] bg-[#F1F1F1] rounded-[16px] focus:outline-none focus:ring-2 focus:ring-[#FFC107]"
-            />
-            {errors.Subject && <span className="text-red-500">{errors.Subject.message}</span>}
-
-          </div>
-         {/* message */}
+        {/* subject */}
+        <div className="mb-4 ">
+          <label className="block mb-1 text-black">Subject</label>
+          <input
+            type="text"
+            {...register("Subject", { required: "Subject is required" })}
+            placeholder="Enter your subject"
+            className="text-black w-full px-3 py-2 border border-[#F1F1F1] bg-[#F1F1F1] rounded-[16px] focus:outline-none focus:ring-2 focus:ring-[#FFC107]"
+          />
+          {errors.Subject && (
+            <span className="text-red-500">{errors.Subject.message}</span>
+          )}
+        </div>
+        {/* message */}
         <div className="mb-4">
-        <label className="block mb-1 text-black">Message</label>
-        <textarea
-            rows={5} 
-            {...register("message",{required:'message is required'})}
+          <label className="block mb-1 text-black">Message</label>
+          <textarea
+            rows={5}
+            {...register("message", { required: "message is required" })}
             placeholder="Enter your message"
             className="text-black w-full px-3 py-2 border border-[#F1F1F1] bg-[#F1F1F1] rounded-[16px] focus:outline-none focus:ring-2 focus:ring-[#FFC107] resize-none"
-        />
-        {errors.message && <span className="text-red-500">{errors.message.message}</span>}
-
+          />
+          {errors.message && (
+            <span className="text-red-500">{errors.message.message}</span>
+          )}
         </div>
 
         <button
-        disabled={isSubmitting}
+          disabled={isSubmitting}
           type="submit"
           className="w-full bg-[#FFC107] text-black py-2 rounded-[16px] hover:bg-yellow-400 transition"
         >
-          {isSubmitting?"Loading...":"Submit"}
+          {isSubmitting ? "Loading..." : "Submit"}
         </button>
       </form>
 
       {/*content*/}
       <div className="text-white text-start bg-[#006F3C] rounded-[16px] p-6 flex-1">
-       <div className=" mb-6">
-         <h1 className="font-semibold text-[24px]">Address</h1>
-        
-        <div className="flex items-center gap-2">
+        <div className=" mb-6">
+          <h1 className="font-semibold text-[24px]">Address</h1>
+
+          <div className="flex items-center gap-2">
             <p className="text-[24px] font-light">الرياض حي القدس</p>
-            <img className="w-5 h-5 text-white" 
-            src={address}/>
-            
+            <img className="w-5 h-5 text-white" src={address} />
+          </div>
         </div>
-        
-       </div>
 
-       <div className=" mb-6">
-         <h1 className="font-semibold text-[24px]">Contact</h1>
-        
-        <div className="flex items-center gap-2">
-             <img className="w-5 h-5 text-white" 
-            src={email}/>
+        <div className=" mb-6">
+          <h1 className="font-semibold text-[24px]">Contact</h1>
+
+          <div className="flex items-center gap-2">
+            <img className="w-5 h-5 text-white" src={email} />
             <p className="text-[24px] font-light"> info@Greenplatform.com </p>
-        </div>
-        <div className="flex items-center gap-2">
-             <img className="w-5 h-5 text-white" 
-            src={phone}/>
+          </div>
+          <div className="flex items-center gap-2">
+            <img className="w-5 h-5 text-white" src={phone} />
             <p className="text-[24px] font-light"> +966 56 592 5177</p>
+          </div>
         </div>
-       </div>
 
+        <div className="mb-6">
+          <h1 className="font-semibold text-[24px] ">Open time</h1>
 
-       <div className="mb-6" >
-         <h1 className="font-semibold text-[24px] ">Open time</h1>
-        
-        <div className="flex items-center gap-2">
-            <p className="text-[24px] font-light"> Saturday_Thursday:10ِAM -5PM</p>
+          <div className="flex items-center gap-2">
+            <p className="text-[24px] font-light">
+              {" "}
+              Saturday_Thursday:10ِAM -5PM
+            </p>
+          </div>
         </div>
-       </div>
 
-          <div >
-         <h1 className="font-semibold text-[24px] mb-3">Stay connected</h1>
-        
-         
+        <div>
+          <h1 className="font-semibold text-[24px] mb-3">Stay connected</h1>
+
           <div className="flex gap-3">
-            <a href="#">
-                <img
+            <a
+              href="https://www.instagram.com/egytech209/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
                 src={Insta}
                 alt="Instagram"
                 className="w-[40px] h-[40px] transition-transform duration-300 hover:scale-110 "
-                />
+              />
+            </a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61566863757062"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={facebook}
+                alt="facebook"
+                className="w-[40px] h-[40px] transition-transform duration-300 hover:scale-110 "
+              />
             </a>
             <a href="#">
-                <img
+              <img
                 src={Tiktok}
                 alt="Tiktok"
                 className="w-[40px] h-[40px] transition-transform duration-300 hover:scale-110 "
-                />
+              />
             </a>
             <a href="#">
-                <img
+              <img
                 src={Snap}
                 alt="Snapchat"
                 className="w-[40px] h-[40px] transition-transform duration-300 hover:scale-110 "
-                />
+              />
             </a>
             <a href="#">
-                <img
+              <img
                 src={Icon4}
                 alt="Icon 4"
                 className="w-[40px] h-[40px] transition-transform duration-300 hover:scale-110"
-                />
+              />
             </a>
-            </div>
-
-       </div>
-
+          </div>
+        </div>
       </div>
     </div>
   );
