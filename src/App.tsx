@@ -3,6 +3,7 @@ import Layout from "./MyComponents/Layout";
 import Home from "./MyComponents/Home";
 import ServiceDetails from "./Pages/ServiceDetails"; 
 import { ToastContainer } from "react-toastify";
+import Founders from "./Pages/Founders";
 
 const App = () => {
   return (
@@ -12,6 +13,8 @@ const App = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="/service/:id" element={<ServiceDetails />} />
+          <Route path="/Founder" element={<Founders />} />
+
         </Route>
       </Routes>
     </Router>

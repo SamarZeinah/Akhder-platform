@@ -61,6 +61,13 @@ useEffect(() => {
           >
             Contact us
           </HashLink>
+          <HashLink
+            smooth
+            to="/Founder"
+            className="text-xl hover:text-[#FFC107] relative after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-[#FFC107] after:transition-all after:duration-500 hover:after:w-full"
+          >
+             Who We are
+          </HashLink>
         </nav>
 
       
@@ -103,6 +110,9 @@ useEffect(() => {
             </Link>
             <Link to="/contact" className="block text-sm hover:text-[#FFC107]">
               Contact us
+            </Link>
+              <Link to="/contact" className="block text-sm hover:text-[#FFC107]">
+              Who We are
             </Link>
             <div className="flex flex-col gap-2 pt-2">
               <Link
