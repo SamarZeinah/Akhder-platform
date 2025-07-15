@@ -33,7 +33,7 @@ export default function Founders() {
     {
       img: founder2,
       name: "Hossam Abdel-rahman",
-           position: "Front-end Developer",
+      position: "Front-end Developer",
       description:
         "Experienced tech leader with strong develop Front-end developer using Angular to build dynamic apps ",
     },
@@ -60,7 +60,7 @@ export default function Founders() {
     },
     {
       img: founder6,
-      name: "Samar  Zeinah",
+      name: "Samar Zeinah",
       position: "Front-end Developer",
       description:
         "Front-end developer using React to create responsive, interactive interfaces",

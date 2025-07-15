@@ -15,6 +15,7 @@ const Home = () => {
     <>
       {/* Section with background image + overlay */}
       <div
+      id="Home"
         className="relative min-h-[130vh] bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${bg})` }}
       >
@@ -75,10 +76,10 @@ const Home = () => {
       </div>
 
       {/* Rest of the page */}
-      <Slider />
-      <About />
-      <ContactUs />
-      <MyMap />
+      <Slider/>
+      <About/>
+      <ContactUs/>
+      <MyMap/>
  
     </>
   );

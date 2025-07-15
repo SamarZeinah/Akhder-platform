@@ -13,7 +13,7 @@ const Footer = () => {
       <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-30 px-6 md:px-24 pt-16 pb-8">
         {/* left side*/}
         <div className="flex flex-col md:flex-col items-center md:items-start text-center md:text-left  w-full md:w-1/3">
-          <img src={Logo} className="w-16 h-16 mb-5" alt="Logo" />
+          <img src={Logo} className="w-44 h-44" alt="Logo" />
           <h1 className="text-3xl text-white font-bold max-w-xl leading-snug">
             Web & App Services
             <br />
@@ -71,7 +71,7 @@ const Footer = () => {
           {/* line*/}
           <div className="hidden md:block w-[2px] h-[350px] bg-white rounded"></div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 text-white w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 text-white w-full my-auto">
             {/* col1 */}
             <div>
               <h3 className="text-3xl mb-4 text-[#FFC107]">Quick Links</h3>

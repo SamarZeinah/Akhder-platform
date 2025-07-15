@@ -41,8 +41,8 @@ const ServiceDetails = () => {
         {
           title: "Mandob Website",
           desc: `A plug-in system that connects the driver to the average user, where the user can search for a driver to
-       plug his or her orders anywhere, choose the best driver and truck, as well as the best price, and then make an order.
-       The driver agrees to deliver the order or refuse if he or she is unable to deliver it.`,
+        plug his or her orders anywhere, choose the best driver and truck, as well as the best price, and then make an order.
+        The driver agrees to deliver the order or refuse if he or she is unable to deliver it.`,
           image: photo1,
           badges: [
             { icon: <Heart />, value: "00+" },
@@ -183,7 +183,7 @@ const ServiceDetails = () => {
             <p className="text-white font-semibold text-[24px]">
               Stay connected
             </p>
-      
+
             <div className="flex gap-3 mt-7">
               <a
                 href="https://www.instagram.com/egytech209/"

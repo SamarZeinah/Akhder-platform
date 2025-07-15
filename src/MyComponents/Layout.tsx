@@ -6,8 +6,8 @@ import Navbar from "./Navbar";
 const Layout = () => {
   return (
     <div className="relative">
-        <Navbar />
-      <div >
+      <Navbar />
+      <div>
         <Outlet />
       </div>
       <Footer />
