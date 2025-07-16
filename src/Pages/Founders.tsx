@@ -13,72 +13,57 @@ import founder5 from "../assets/founder5.png";
 import founder6 from "../assets/founder6.png";
 import founder7 from "../assets/founder7.png";
 import founder8 from "../assets/founder8.png";
+import { useTranslation } from "react-i18next";
 
 export default function Founders() {
+  const{t}=useTranslation()
   const foundersData = [
     {
       img: founder,
-      name: "MOHAMED ELSHAHAT",
-      position: "TEAM LEADER",
-      description:
-        "Team leader from Egypt with 2 years of experience and strong soft skills.",
+      name: t('Who-We-are.name1'),
+      position:t('Who-We-are.position1'),
+      description:t('Who-We-are.description1')
     },
     {
       img: founder1,
-      name: "WAEL FOTOUH",
-      position: "GENERAL MANAGER",
-      description:
-        "Experienced tech leader with strong development, networking, and management skills",
-    },
+      name: t('Who-We-are.name2'),
+      position:t('Who-We-are.position2'),
+      description:t('Who-We-are.description2')},
     {
       img: founder2,
-      name: "Hossam Abdel-rahman",
-      position: "Front-end Developer",
-      description:
-        "Experienced tech leader with strong develop Front-end developer using Angular to build dynamic apps ",
-    },
+      name: t('Who-We-are.name3'),
+      position:t('Who-We-are.position3'),
+      description:t('Who-We-are.description3')},
     {
       img: founder3,
-      name: "AHMED ABDELRAHMAN",
-      position: " Ui/Ux Designer",
-      description:
-        "UI/UX Designer experienced in SDLC, agile methods, and user-focused product design",
-    },
+      name: t('Who-We-are.name4'),
+      position:t('Who-We-are.position4'),
+      description:t('Who-We-are.description4')},
     {
       img: founder4,
-      name: "HESHAM FAHMI",
-      position: "Mobile App Developer",
-      description:
-        "Flutter/Dart developer with Firebase integration and Android development experience.",
-    },
+      name: t('Who-We-are.name5'),
+      position:t('Who-We-are.position5'),
+      description:t('Who-We-are.description5')},
     {
       img: founder5,
-      name: "HAMADA SALAH",
-      position: "Web Developer",
-      description:
-        "Full-stack developer with 3 years’ experience in Laravel, PHP, JavaScript",
-    },
+      name: t('Who-We-are.name6'),
+      position:t('Who-We-are.position6'),
+      description:t('Who-We-are.description6')},
     {
       img: founder6,
-      name: "Samar Zeinah",
-      position: "Front-end Developer",
-      description:
-        "Front-end developer using React to create responsive, interactive interfaces",
-    },
+      name: t('Who-We-are.name7'),
+      position:t('Who-We-are.position7'),
+      description:t('Who-We-are.description7')},
     {
       img: founder7,
-      name: "Rawan Mohamed",
-      position: "Ui/Ux designer",
-      description:
-        "UI is the visual part of an app buttons, forms designed to offer simple, intuitive user experience.",
-    },
+         name: t('Who-We-are.name8'),
+      position:t('Who-We-are.position8'),
+      description:t('Who-We-are.description8')},
     {
       img: founder8,
-      name: "Mohamed Salah",
-      position: "Back-end Developer",
-      description:
-        "Back-end developer skilled in ExpressNode.js and Express, focused on secure and efficient API ",
-    },
+          name: t('Who-We-are.name9'),
+      position:t('Who-We-are.position9'),
+      description:t('Who-We-are.description9')},
   ];
 
   return (
@@ -91,20 +76,16 @@ export default function Founders() {
       <div className="relative z-20 flex flex-col items-center justify-between text-center md:text-start md:items-start px-8 pt-[150px] max-w-7xl mx-auto gap-10 pb-20 opacity-0 translate-y-10 animate-fade-in-up">
         <div className="w-full md:w-1/2 lg:w-auto mx-auto lg:mx-0 text-center lg:text-start text-white">
           <h1 className="text-5xl font-bold mb-4 leading-normal">
-            Who we are?
+           {t('Who-We-are.Who-we-are')}
           </h1>
           <p className="text-lg mb-11 max-w-lg">
-            We are a Saudi programming company that creates digital solutions
-            intelligently and professionally. We design and develop systems,
-            websites, and applications that meet your business needs and keep
-            pace with market expectations. We work on the details and build
-            technology with confidence, to be a true partner for success.
+           {t('Who-We-are.description')}
           </p>
         </div>
 
         {/* Social Icons */}
         <div>
-          <p className="text-white font-semibold text-[24px]">Stay connected</p>
+          <p className="text-white font-semibold text-[24px]">{t('Who-We-are.Stay-connected')}</p>
 
           <div className="flex gap-3 mt-7">
             <a
@@ -155,19 +136,19 @@ export default function Founders() {
           <div className="bg-white/20 p-6 flex flex-col md:flex-row justify-between items-center gap-6 mt-9 w-full">
             <div className="text-white text-center w-full min-w-[120px] md:w-1/3 hover:scale-x-110 transition rounded-xl">
               <h3 className="font-semibold text-2xl mb-2 text-[#FFC107]">5+</h3>
-              <p>Experiences</p>
+              <p>{t('Who-We-are.Experiences')}</p>
             </div>
             <div className="text-white text-center w-full min-w-[120px] md:w-1/3 hover:scale-x-110 transition rounded-xl">
               <h3 className="font-semibold text-2xl mb-2 text-[#FFC107]">
-                20+
+                {t('Who-We-are.20+')}
               </h3>
-              <p>Project done</p>
+              <p>{t('Who-We-are.Project-done')}</p>
             </div>
             <div className="text-white text-center w-full min-w-[120px] md:w-1/3 hover:scale-x-110 transition rounded-xl">
               <h3 className="font-semibold text-2xl mb-2 text-[#FFC107]">
-                80+
+                {t('Who-We-are.80+')}
               </h3>
-              <p>Happy Clients</p>
+              <p>{t('Who-We-are.Happy-Clients')}</p>
             </div>
           </div>
         </div>
@@ -175,11 +156,10 @@ export default function Founders() {
       {/* Founder Section */}
       <div className="bg-[#006F3C]  py-24 px-4 text-center text-white">
         <p className="font-bold text-[40px] md:text-[60px] leading-tight mb-6">
-          Our Founders
+          {t('Who-We-are.Our-Founders')}
         </p>
         <p className="font-light max-w-xl mx-auto text-lg">
-          Proudly led by visionaries with deep expertise in technology and
-          programming.
+          {t('Who-We-are.Proudly-led')}
         </p>
 
         <div className="flex flex-wrap justify-center gap-20 mt-10">
@@ -193,7 +173,9 @@ export default function Founders() {
               }}
             >
               <div className="absolute top-4 right-4 w-full h-full bg-[#FFC107] rounded-xl z-0 "></div>
-              <div className="relative bg-white rounded-xl shadow-md p-10 z-10 hover:scale-105 transition-transform duration-300">
+              {/* <div className="relative bg-white rounded-xl shadow-md p-10 z-10 hover:scale-105 transition-transform duration-300"> */}
+               <div className="relative bg-white rounded-xl shadow-md p-10 z-10 hover:scale-105 transition-transform duration-300 flex flex-col justify-between min-h-[400px]">
+
                 <img
                   src={founder.img}
                   alt={founder.name}

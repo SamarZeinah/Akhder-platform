@@ -16,34 +16,34 @@ import mobile1 from "../assets/mobile1.png";
 import mobile2 from "../assets/mobile2.png";
 import mobile3 from "../assets/mobile3.png";
 import mobile4 from "../assets/mobile4.png";
+import { useTranslation } from "react-i18next";
 
 const ServiceDetails = () => {
   const { id } = useParams();
-
+const{t,i18n}=useTranslation();
   const contentData = [
     {
       id: "1",
       background: servbg,
       header: {
-        title: "Website Design and Development",
-        desc: `We design modern, responsive websites that reflect your business identity and showcase your services in the best possible way. Whether you're looking for a profile website, an online store, or a custom control panel, we're here to create the perfect solution.`,
+        title: t('ServiceDetails.header.title'),
+        desc:t('ServiceDetails.header.desc'),
       },
       stats: [
-        { value: "5+", label: "Experiences" },
-        { value: "20+", label: "Project done" },
-        { value: "80+", label: "Happy Clients" },
+      { value: i18n.language === "ar" ? "٥+" : "5+", label: t('ServiceDetails.stats.Experiences') },
+      { value: i18n.language === "ar" ? "٢٠+" : "20+", label: t('ServiceDetails.stats.Project-done') },
+      { value: i18n.language === "ar" ? "٨٠+" : "80+", label: t('ServiceDetails.stats.Happy-Clients') },
+
       ],
       projectsHeader: {
-        title: "Creative & Tech-Driven Digital Solutions",
-        desc: "We provide innovative web solutions that combine modern design with effective performance to achieve your goals.",
+        title: t('ServiceDetails.projectsHeader.title'),
+        desc:t('ServiceDetails.projectsHeader.desc'),
       },
       projects: [
         {
-          title: "Mandob Website",
-          desc: `A plug-in system that connects the driver to the average user, where the user can search for a driver to
-        plug his or her orders anywhere, choose the best driver and truck, as well as the best price, and then make an order.
-        The driver agrees to deliver the order or refuse if he or she is unable to deliver it.`,
-          image: photo1,
+        title: t('ServiceDetails.projects.title1'),
+        desc:t('ServiceDetails.projects.desc1'),
+         image: photo1,
           badges: [
             { icon: <Heart />, value: "00+" },
             { icon: <Star />, value: "20+" },
@@ -51,10 +51,8 @@ const ServiceDetails = () => {
           ],
         },
         {
-          title: "Tawjihi Gate Website",
-          desc: `Offering arrange of courses across our chain of global learning centres , each having unique features and properties, enabling us to meet our student smiscell an eousde mands.
-      An educational portal through which tea chersc and classes, brief sand educational units , as well a sup load education video sex plaining to student sand to each student has an
-        ip link they take after registering on the website and paying the necessary expenses.`,
+         title: t('ServiceDetails.projects.title2'),
+        desc:t('ServiceDetails.projects.desc2'),
           image: photo2,
           badges: [
             { icon: <Heart />, value: "00+" },
@@ -63,9 +61,8 @@ const ServiceDetails = () => {
           ],
         },
         {
-          title: "iKhair Website",
-          desc: `ikhair is the first Payment Arabic platform and application to pay charities Via SMS, Bank account and credit card. It support
-       Mobile Donation App, pay zakat, and donate from your mobile via SMS, Creditcard and Bank account. more than 13 million dur ham for more than 150 charitabl`,
+        title: t('ServiceDetails.projects.title3'),
+        desc:t('ServiceDetails.projects.desc3'),
           image: photo3,
           badges: [
             { icon: <Heart />, value: "00+" },
@@ -74,10 +71,9 @@ const ServiceDetails = () => {
           ],
         },
         {
-          title: "Raslan Children Company Website",
-          desc: `This website serve the architecture field , where there is a group of specialized engineers and technicians to install and work all kinds of Hashemite stones and pharaonic
-        stones and all kinds of in teri or an dexter ior decorations and finish villas and palaces. It is a Content Management System using Laravel.`,
-          image: photo4,
+         title: t('ServiceDetails.projects.title4'),
+        desc:t('ServiceDetails.projects.desc4'),
+        image: photo4,
           badges: [
             { icon: <Heart />, value: "00+" },
             { icon: <Star />, value: "20+" },
@@ -85,10 +81,9 @@ const ServiceDetails = () => {
           ],
         },
         {
-          title: "Dr Motasem Bader Website",
-          desc: `Apersonaldentist's Website that enabl espatients to book and inquire the dentist online without having to go to the clinic, as well as available medical consultations, saving time and effort on patients and ensuring the level of service. You can view all services that including, Dentalimplant , SurgeryوFixed and variable
-        teeth installation, whitening,  Orthodontics, Ceramic scales, Cosmetic, fillings, Dental nerve treatment`,
-          image: photo5,
+          title: t('ServiceDetails.projects.title5'),
+        desc:t('ServiceDetails.projects.desc5'),
+        image: photo5,
           badges: [
             { icon: <Heart />, value: "00+" },
             { icon: <Star />, value: "20+" },
@@ -101,24 +96,23 @@ const ServiceDetails = () => {
       id: "2",
       background: mobilebg,
       header: {
-        title: "Mobile design and development",
-        desc: `We develop modern, easy-to-use applications that reflect your business's identity and meet your needs. 
-        Whether it's a service application, an online store, or a custom management system, we create a unique and integrated experience for you.`,
+        title: t('ServiceDetails2.header.title'),
+        desc: t('ServiceDetails2.header.desc'),
       },
-      stats: [
-        { value: "5+", label: "Experiences" },
-        { value: "20+", label: "Project done" },
-        { value: "80+", label: "Happy Clients" },
+       stats: [
+      { value: i18n.language === "ar" ? "٥+" : "5+", label: t('ServiceDetails.stats.Experiences') },
+      { value: i18n.language === "ar" ? "٢٠+" : "20+", label: t('ServiceDetails.stats.Project-done') },
+      { value: i18n.language === "ar" ? "٨٠+" : "80+", label: t('ServiceDetails.stats.Happy-Clients') },
+
       ],
       projectsHeader: {
-        title: "Creative & Tech-Driven Mobile Apps",
-        desc: "We craft mobile apps that blend sleek design with powerful functionality to bring your vision to life.",
-      },
+        title: t('ServiceDetails2.projectsHeader.title'),
+        desc: t('ServiceDetails2.projectsHeader.desc'),},
       projects: [
         {
-          title: "IKhair Application",
-          desc: `Mobile Donation App, pay zakat, and donate from your mobile via SMS , Credit card and Bank a ccount .more than 13 million dur ham for more than 150 chari table  projects an dur gent cases.`,
-          image: mobile1,
+        title: t('ServiceDetails2.projects.title1'),
+        desc: t('ServiceDetails2.projects.desc1'),
+         image: mobile1,
           badges: [
             { icon: <Heart />, value: "00+" },
             { icon: <Star />, value: "20+" },
@@ -126,8 +120,8 @@ const ServiceDetails = () => {
           ],
         },
         {
-          title: "Seyana - UAEA pplication",
-          desc: `Seyanah-UAE app is an amazing and flexible app forhome services Facilitate the user to request more than on order with categories (Plumber,Laundry, Packers Movers, Washing Machine, Painting, Cleaning, CarWash ,PestsControlandmore .`,
+        title: t('ServiceDetails2.projects.title2'),
+        desc: t('ServiceDetails2.projects.desc2'),
           image: mobile2,
           badges: [
             { icon: <Heart />, value: "00+" },
@@ -136,8 +130,8 @@ const ServiceDetails = () => {
           ],
         },
         {
-          title: "Mega JO Application",
-          desc: `it is consider edane-commerce mobile application where you can make online shopping with online payment methods . it has multi- vendor  feature . Anyvendor scanview their products.`,
+        title: t('ServiceDetails2.projects.title3'),
+        desc: t('ServiceDetails2.projects.desc3'),
           image: mobile3,
           badges: [
             { icon: <Heart />, value: "00+" },
@@ -146,8 +140,8 @@ const ServiceDetails = () => {
           ],
         },
         {
-          title: "Raslan Children Company Website",
-          desc: `This website serve the architecture field , where there is a group of specialized engineers and technicians to install and work all kinds of Hashemite stones and pharaonic stones and all kinds of in teri or an dexter ior decorations and finish villas and palaces. It is a Content Management System using Laravel.`,
+        title: t('ServiceDetails2.projects.title4'),
+        desc: t('ServiceDetails2.projects.desc4'),
           image: mobile4,
           badges: [
             { icon: <Heart />, value: "00+" },
@@ -181,7 +175,7 @@ const ServiceDetails = () => {
           {/* Social Icons */}
           <div>
             <p className="text-white font-semibold text-[24px]">
-              Stay connected
+            {t('ServiceDetails.Stay-connected')}
             </p>
 
             <div className="flex gap-3 mt-7">

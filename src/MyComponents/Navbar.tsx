@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import Logo from "../assets/logo.svg";
 import { Menu } from "lucide-react";
 import { HashLink } from "react-router-hash-link";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useTranslation } from "react-i18next";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -15,7 +17,7 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
+const{t}=useTranslation()
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 py-5 transition-all duration-300 ${
@@ -34,7 +36,7 @@ const Navbar = () => {
             to="/#Home"
             className="text-xl hover:text-[#FFC107] relative after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-[#FFC107] after:transition-all after:duration-500 hover:after:w-full"
           >
-            Home
+            {t('Navbar.Home')}
           </HashLink>
 
           <HashLink
@@ -42,7 +44,8 @@ const Navbar = () => {
             to="/#services"
             className="text-xl hover:text-[#FFC107] relative after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-[#FFC107] after:transition-all after:duration-500 hover:after:w-full"
           >
-            Services
+            {t('Navbar.Services')}
+
           </HashLink>
 
           <HashLink
@@ -50,7 +53,8 @@ const Navbar = () => {
             to="/#about"
             className="text-xl hover:text-[#FFC107] relative after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-[#FFC107] after:transition-all after:duration-500 hover:after:w-full"
           >
-            About us
+            {t('Navbar.About_us')}
+
           </HashLink>
 
           <HashLink
@@ -58,30 +62,31 @@ const Navbar = () => {
             to="/#Contact"
             className="text-xl hover:text-[#FFC107] relative after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-[#FFC107] after:transition-all after:duration-500 hover:after:w-full"
           >
-            Contact us
+            {t('Navbar.Contact_us')}
           </HashLink>
           <HashLink
             smooth
             to="/Founder"
             className="text-xl hover:text-[#FFC107] relative after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-[#FFC107] after:transition-all after:duration-500 hover:after:w-full"
           >
-            Who We are
+            {t('Navbar.Who_We_are')}
           </HashLink>
         </nav>
 
         {/* Buttons for large screens */}
         <div className="hidden md:flex gap-4">
+          <LanguageSwitcher/>
           <Link
             to="/login"
             className="font-bold border border-[#FFC107] text-[#FFC107] px-10 py-2 rounded-[16px] hover:bg-[#FFC107] hover:text-white transition text-sm"
           >
-            Log in
+            {t('Navbar.Log_in')}
           </Link>
           <Link
             to="/login"
             className="font-bold bg-[#FFC107] text-white px-10 py-2  rounded-[16px] transition text-sm"
           >
-            Sign in
+            {t('Navbar.Sign_in')}
           </Link>
         </div>
 

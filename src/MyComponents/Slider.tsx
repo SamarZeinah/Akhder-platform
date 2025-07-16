@@ -12,57 +12,59 @@ import Advertising from '../assets/Advertising.png';
 import Motion from '../assets/Motion.png';
 import Design from '../assets/Design.png';
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
+
+
+const CardSlider = () => {
+  const{t}=useTranslation()
+  const prevRef = useRef<HTMLButtonElement>(null);
+  const nextRef = useRef<HTMLButtonElement>(null);
+  const [swiperInstance, setSwiperInstance] = useState<any>(null);
 const cards = [
   {
     id: 1,
     img: WebIcon,
-    title: "Websites",
-    desc: "We create responsive websites that reflect your brand and offer a smooth user experience.",
+    title: t('sliders.title1'),
+    desc: t('sliders.desc1'),
   },
   {
     id: 2,
     img: MobileIcon,
-    title: "Mobile Applications",
-    desc: "Custom mobile apps with smart design and smooth performance.",
+    title: t('sliders.title2'),
+    desc: t('sliders.desc2'),
   },
   {
     id: 3,
     img: DatabaseIcon,
-    title: "Databases",
-    desc: "We create advertising campaigns that attract attention and achieve impact.",
+     title: t('sliders.title3'),
+    desc: t('sliders.desc3'),
   },
   {
     id: 4,
     img: marketing,
-    title: "Digital Marketing",
-    desc: "Reach the right audience with smart, effective, and targeted strategies.",
+    title: t('sliders.title4'),
+    desc: t('sliders.desc4'),
   },
   {
     id: 5,
     img: Advertising,
-    title: "Advertising",
-    desc: "Impactful campaigns that grab attention, build connection, and drive results.",
+    title: t('sliders.title5'),
+    desc: t('sliders.desc5'),
   },
   {
     id: 6,
     img: Motion,
-    title:"Motion Graphics",
-    desc: "Bring your story to life with bold, dynamic visuals that inspire, stay unforgettable.",
+    title: t('sliders.title6'),
+    desc: t('sliders.desc6'),
   },
   {
     id: 7,
     img: Design,
-    title: "Graphic Design",
-    desc: "Visual identity that makes your brand stand out and stay memorable.",
+    title: t('sliders.title7'),
+    desc: t('sliders.desc7'),
   },
 ];
-
-const CardSlider = () => {
-  const prevRef = useRef<HTMLButtonElement>(null);
-  const nextRef = useRef<HTMLButtonElement>(null);
-  const [swiperInstance, setSwiperInstance] = useState<any>(null);
-
   useEffect(() => {
     if (swiperInstance) {
       swiperInstance.params.navigation.prevEl = prevRef.current;
