@@ -33,7 +33,7 @@ const Footer = () => {
             <br />
             {t("Footer.One-Unified-Platform")}
           </h1>
-          <div className="flex gap-3 mt-7">
+          <div className="flex gap-3 mt-7 mb-5">
             <a
               href="https://www.instagram.com/egytech209/"
               target="_blank"

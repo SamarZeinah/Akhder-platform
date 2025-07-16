@@ -177,7 +177,7 @@ const{t}=useTranslation();
         <button
           disabled={isSubmitting}
           type="submit"
-          className="w-full bg-[#FFC107] text-black py-2 rounded-[16px] hover:bg-yellow-400 transition"
+          className="w-full bg-[#FFC107] text-black py-2 rounded-[16px] hover:bg-yellow-400 transition text-[14px] font-bold"
         >
           {isSubmitting ? t('ContactUs.Loading...') : t('ContactUs.Submit')}
         </button>
