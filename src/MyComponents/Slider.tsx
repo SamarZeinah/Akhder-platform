@@ -77,18 +77,32 @@ const cards = [
 const navigate = useNavigate();
 
   return (
-    <div id="services" className="relative z-10 -mt-40 px-28">
+    // <div id="services" className="relative z-10 -mt-40 px-28">
+    <div id="services" className="relative z-10 -mt-40 px-4 sm:px-10 md:px-28">
+
       <Swiper
         modules={[Navigation]}
         onSwiper={setSwiperInstance}
         spaceBetween={10}
         slidesPerView={1.2}
         speed={800}
-        breakpoints={{
-            400: { slidesPerView: 1 },
-          768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
-        }}
+      //   breakpoints={{
+
+      // 480: { slidesPerView: 1.2 },
+      // 640: { slidesPerView: 1.5 },
+      // 768: { slidesPerView: 2 },
+      // 1024: { slidesPerView: 2.5 },
+      // 1280: { slidesPerView: 3 },
+      //   }}
+      breakpoints={{
+  0: { slidesPerView: 1 },
+  480: { slidesPerView: 1.1 },
+  640: { slidesPerView: 1.3 },
+  768: { slidesPerView: 2 },
+  1024: { slidesPerView: 2.5 },
+  1280: { slidesPerView: 3 },
+}}
+
         className="pb-10"
       >
         {cards.map((card, index) => (

@@ -189,7 +189,11 @@ const{t}=useTranslation();
           <h1 className="font-semibold text-[24px]">{t('ContactUs.Address')}</h1>
 
           <div className="flex items-center gap-2">
-            <p className="text-[24px] font-light">الرياض حي القدس</p>
+            <p className="text-[24px] font-light"> الرياض حي القدس شارع الملك عبدالله</p>
+            <img className="w-5 h-5 text-white" src={address} />
+          </div>
+                    <div className="flex items-center gap-2">
+            <p className="text-[24px] font-light"> المنصوره شارع الاتوبيس القديم  برج الماسه</p>
             <img className="w-5 h-5 text-white" src={address} />
           </div>
         </div>

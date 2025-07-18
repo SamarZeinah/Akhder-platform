@@ -17,10 +17,35 @@ import mobile2 from "../assets/mobile2.png";
 import mobile3 from "../assets/mobile3.png";
 import mobile4 from "../assets/mobile4.png";
 import { useTranslation } from "react-i18next";
+import { useEffect, useState } from "react";
 
 const ServiceDetails = () => {
   const { id } = useParams();
-const{t,i18n}=useTranslation();
+const{t}=useTranslation();
+
+// Counter Component
+function Counter({ end, duration = 2000 }: { end: number; duration?: number }) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let start = 0;
+    const increment = end / (duration / 50);
+    const interval = setInterval(() => {
+      start += increment;
+      if (start >= end) {
+        start = end;
+        clearInterval(interval);
+      }
+      setCount(Math.floor(start));
+    }, 50);
+
+    return () => clearInterval(interval);
+  }, [end, duration]);
+
+  return (
+    <h3 className="font-semibold text-2xl mb-2 text-[#FFC107]">{count}+</h3>
+  );
+}
   const contentData = [
     {
       id: "1",
@@ -30,9 +55,9 @@ const{t,i18n}=useTranslation();
         desc:t('ServiceDetails.header.desc'),
       },
       stats: [
-      { value: i18n.language === "ar" ? "٥+" : "5+", label: t('ServiceDetails.stats.Experiences') },
-      { value: i18n.language === "ar" ? "٢٠+" : "20+", label: t('ServiceDetails.stats.Project-done') },
-      { value: i18n.language === "ar" ? "٨٠+" : "80+", label: t('ServiceDetails.stats.Happy-Clients') },
+      { value:  <Counter end={5} />, label: t('ServiceDetails.stats.Experiences') },
+      { value: <Counter end={20} />, label: t('ServiceDetails.stats.Project-done') },
+      { value: <Counter end={80} />, label: t('ServiceDetails.stats.Happy-Clients') },
 
       ],
       projectsHeader: {
@@ -99,10 +124,16 @@ const{t,i18n}=useTranslation();
         title: t('ServiceDetails2.header.title'),
         desc: t('ServiceDetails2.header.desc'),
       },
-       stats: [
-      { value: i18n.language === "ar" ? "٥+" : "5+", label: t('ServiceDetails.stats.Experiences') },
-      { value: i18n.language === "ar" ? "٢٠+" : "20+", label: t('ServiceDetails.stats.Project-done') },
-      { value: i18n.language === "ar" ? "٨٠+" : "80+", label: t('ServiceDetails.stats.Happy-Clients') },
+      //  stats: [
+      // { value: i18n.language === "ar" ? "٥+" : "5+", label: t('ServiceDetails.stats.Experiences') },
+      // { value: i18n.language === "ar" ? "٢٠+" : "20+", label: t('ServiceDetails.stats.Project-done') },
+      // { value: i18n.language === "ar" ? "٨٠+" : "80+", label: t('ServiceDetails.stats.Happy-Clients') },
+
+      // ],
+        stats: [
+      { value:  <Counter end={5} />, label: t('ServiceDetails.stats.Experiences') },
+      { value: <Counter end={20} />, label: t('ServiceDetails.stats.Project-done') },
+      { value: <Counter end={80} />, label: t('ServiceDetails.stats.Happy-Clients') },
 
       ],
       projectsHeader: {
